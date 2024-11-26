@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -15,3 +17,6 @@ Route::get('/product', function (Request $request) {
     
 })->middleware('auth:sanctum');
 Route::get('/products', [ProductController::class, 'index']);
+Route::get('/categories', [CategoryController::class, 'index']);
+Route::post('/postData', [ProductController::class, 'store']);
+Route::delete('/deleteData', [ProductController::class, 'destroy']);
