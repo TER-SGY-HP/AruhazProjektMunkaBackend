@@ -19,4 +19,4 @@ Route::get('/product', function (Request $request) {
 Route::get('/products', [ProductController::class, 'index']);
 Route::get('/categories', [CategoryController::class, 'index']);
 Route::post('/postData', [ProductController::class, 'store']);
-Route::delete('/deleteData', [ProductController::class, 'destroy']);
+Route::delete('/deleteData/{id}', [ProductController::class, 'destroy']);
