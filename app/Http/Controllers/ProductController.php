@@ -15,7 +15,7 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $record = new Product();
-        $record->fill($request->all());
+        $record->fill($request[0]->all());
         $record->save();
     }
     public function destroy(string $id)
